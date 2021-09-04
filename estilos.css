@@ -1,0 +1,395 @@
+*{ /*-- texto--*/
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    
+}
+
+html {
+    font-size: 62.5%;
+} 
+
+/*--CONTENEDOR GALERIA DE FOTOS--*/
+.body{
+    background: rgba(0,0,0,.9);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3rem;
+}
+
+.grid-container{
+    background: black
+}
+
+/*--CONTENEDOR CABECERA--*/
+.container .heading {
+    background: rgb(0, 0, 0);
+    color: black;
+    font-size: 40px;
+    font-weight: normal;
+    margin:  0, 0, 20,0;
+    padding: 15px;
+    text-transform: capitalize;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align:center;
+}
+
+/* ================================= */
+/* === ESTILOS GALERIA DE FOTOS === */
+/* ================================= */
+
+.grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.grid-item:hover {
+    filter: opacity(0.9);
+    transform: scale(1.05);
+}
+
+.grid-container {
+    background: #ffffff;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    grid-auto-rows: minmax(200px, auto);
+    gap: 20px;
+    padding: 20px;
+    grid-auto-flow: dense;
+    box-shadow: rgba(0,0,0,.5);
+}
+
+@media (min-width: 600px) {
+
+ .wide {
+    grid-column: span 2;
+}
+
+ .tall {
+    grid-row: span 2;
+ }
+
+}
+
+/* ================================= */
+/* === ESTILOS GALERIA DE VIDEOS === */
+/* ================================= */
+
+/*--CONTENEDOR GALERIA DE VIDEOS--*/
+.container{
+    position: relative;
+    min-height: auto;
+    background: rgb(255, 255, 255);
+}
+
+/*--DISPOSICION GALERIA DE VIDEO--*/
+.video-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0px;
+
+}
+
+
+/*--TAMAÑO CAJA VIDEO--*/
+.container .video-container .video {
+    height: 15rem;
+    width: 25rem;
+    margin: 1rem;
+    /*box-shadow: 0 .5rem 1rem rgba(0,0,0,.5);*/
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+/*--TAMAÑO VIDEO--*/
+.video-container .video video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border: none;
+    cursor: pointer;
+}
+
+/*--PROPIEDADES DE VIDEO CON CURSOR--*/
+.video-container .video video:hover{
+    transition: .2s linear;
+    transform: scale(1.3);
+}
+
+/*--PROPIEDADES DE VIDEO ACTIVO (POP-UP)--*/
+.video-container .video .active {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    width:70%;
+    box-shadow: 0 0 0 100vh rgba(0,0,0,.7);
+    z-index: 1;
+    border-radius: 15px;
+}
+
+/*--PROPIEDADES DE VIDEO ACTIVO (POP-UP) CON CURSOR--*/
+.video-container .video .active:hover {
+    transition: none;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+ nav{
+     background: #00c2c2;
+ }
+
+
+/*--PROPIEDADES DE ESTILO MENU--*/
+label.logo{
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    padding: 0 0px; 
+    line-height: 80px;
+    font-weight: lighter;
+}
+
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a{
+    color: rgb(245, 245, 245);
+    font-size: 20px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+a.active, a:hover{
+    background: rgb(rgb(4, 221, 58), green, blue);
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    margin-top: 25px;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+@media(max-width:530px){
+    .checkbtn{
+        display: block;
+}
+
+
+
+ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+}  
+   
+nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+}
+
+nav ul li a{
+    font-size: 20px;
+}
+
+a:hover ,a.active{
+    background: none;
+    color: violet;
+}
+  
+#check:checked ~ ul{
+    left: 0;
+}
+
+}
+
+/*--PROPIEDADES DE ESTILO FOOTER--*/
+footer{
+    width: 100%;
+    padding: 1px 0px;
+    color: #02b6c6;
+    background-size: cover;
+    height: auto;
+
+}
+
+.container_footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1800px;
+    margin: auto;
+    margin-top: 3px;
+}
+
+
+.box_footer{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.box_footer .logotipo img{
+    width: 80px;
+}
+
+.box_footer .informacion{
+    max-width: 600px;
+    margin-top: 20px;
+    font-weight: 500;
+    color: #02b6c6;
+    font-size: 18px;
+    text-align: left;
+}
+
+.box_footer h2{
+     margin-bottom: 30px;
+     color: #02b6c6;
+     font-weight: 700;
+}
+
+
+/* SERVICIOS   */
+.box_footer a{
+    margin-top: 10px;
+    color: dimgrey;
+    font-weight: 800;
+}
+
+.box_footer a:hover{
+    opacity: 0.8;
+}
+
+.box_footer a .fab{
+    font-size: 20px;
+}
+
+.box_copyright{
+    max-width: auto;
+    margin: auto;
+    text-align: center;
+    padding: 0px 40px;
+}
+
+.box_copyright p{
+    margin-top: 0px;
+    margin-bottom: 50px;
+    color: #7a7a7a;
+}
+
+.box_copyright hr{
+    border: none;
+    height: 1px;
+    background-color: #7a7a7a;
+}
+
+/*--PROPIEDADES DE ESTILO LANDING PAGE--*/
+.header{
+    /*background: rgba(14, 34, 48, 0.685);*/
+    height: 100vh;
+}
+
+.video-background{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+}
+
+@media (min-aspect-radio:16/9){
+    .video-background{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-radio:16/9){
+    .video-background{
+        width: auto;
+        height: 100%;
+    }
+}
+
+.logo-landing{
+    margin: 25px;
+    height: 100px;
+}
+
+.bienvenida-msg{
+    position: relative;
+    text-align: center;
+    font-family: monospace;
+    color: rgb(255, 8, 202);
+    top: 700px;
+}
+
+.bienvenida-msg h1{
+    font-size: 50px;
+    font-weight: 100;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+
+.btn{
+    font-size: 18px;
+    color: #fff;
+    margin-top: 5px;
+    padding: 7px 22px;
+    text-decoration: none;
+    border: 1px solid coral;
+    border-radius: 25px;
+}
+
+.btn-enter{
+    background: coral;
+}
+
+.btn-enter:hover{
+    background: #04d8e7;
+    border: 1px solid #04d8e7;
+    transition: .5s;
+}
